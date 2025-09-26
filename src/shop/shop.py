@@ -30,7 +30,11 @@ def buy(product, qty):                             # Definuji funkci pro nákup 
 # navíc může tento celkový součet kusů produktů provést jen pro produkty začínající na první písmeno,
 # které zadám do nepovinného parametru (atributu first_letter funkce on_stock)
 # vyvolává výjimku RuntimeError při zadání hodnoty nestringového datového typu do parametru first_letter
-def on_stock(first_letter: str | None = None):   
+from typing import Optional # kvůli definici nepovinného parametru,nutná změna pro Git Hub podle starší verze Pythonu
+
+def on_stock(first_letter: Optional[str] = None): # nastavení nepovinného parametru: pro starší verzi Pythonu kvůli Git Hub
+# def on_stock(first_letter: str | None = None):  #  pro novou verzi Pythonu od 3.10 
+
     if first_letter and not isinstance(first_letter, str):
         raise RuntimeError("Špatný typ parametru first_letter.")
 
