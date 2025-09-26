@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytest-shop-app"
+version = "0.1.0"
+description = "Studijní projekt pro začátečníky: ukázka testování v pytest na modelu obchodu."
+authors = [
+    { name = "Tvoje Jméno", email = "tvoje@email.com" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pytest>=7.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
